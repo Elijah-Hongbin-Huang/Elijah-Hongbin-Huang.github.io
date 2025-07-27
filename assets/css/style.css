@@ -1,32 +1,110 @@
-/* reset margins/padding */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* assets/css/style.css */
+
+/* 1) Reset and base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: sans-serif;
+  font-family: 'Merriweather', serif;
+  color: #333;
+  background: #f9f9f9;
   line-height: 1.6;
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* 2) Navigation */
 nav {
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 nav a {
-  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   color: #0366d6;
-  margin-right: 1rem;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #023e8a;
 }
 
-h1 {
+/* 3) Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #0366d6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* 4) Main content cards */
+main > section {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+main h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 main p {
   margin-bottom: 1rem;
 }
+
+/* 5) Links in main */
+main a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+/* 6) Responsive adjustments */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-photo {
+    margin: 0 auto;
+  }
+}
+
