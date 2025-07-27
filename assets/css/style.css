@@ -1,18 +1,17 @@
 /* assets/css/style.css */
 
-/* 1) Reset and base setup */
+/* 1) Reset & base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Merriweather', serif;
-  color: #333;
   background: #f9f9f9;
+  color: #333;
   line-height: 1.6;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -20,9 +19,8 @@ body {
 /* 2) Navigation */
 nav {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
-
 nav a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -31,12 +29,50 @@ nav a {
   margin: 0 1rem;
   transition: color 0.2s;
 }
-
 nav a:hover {
   color: #023e8a;
 }
 
-/* 3) Hero section */
+/* 3) Layout container */
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+/* 4) Sidebar styling */
+.sidebar {
+  flex: 0 0 220px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+.sidebar h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  margin-bottom: 0.75rem;
+}
+.sidebar a {
+  color: #0366d6;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* 5) Main content area */
+.content {
+  flex: 1;
+}
+
+/* 6) Hero section */
 .hero {
   display: flex;
   align-items: center;
@@ -47,58 +83,51 @@ nav a:hover {
   padding: 2rem;
   margin-bottom: 2rem;
 }
-
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #0366d6;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 .hero-text h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-
 .hero-text p {
   font-weight: 300;
   line-height: 1.4;
 }
 
-/* 4) Main content cards */
-main > section {
+/* 7) Sections styling */
+.content > section {
   background: white;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   padding: 2rem;
   margin-bottom: 2rem;
 }
-
-main h2 {
+.content h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   margin-bottom: 1rem;
 }
-
-main p {
+.content p {
   margin-bottom: 1rem;
 }
 
-/* 5) Links in main */
-main a {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-main a:hover {
-  text-decoration: underline;
-}
-
-/* 6) Responsive adjustments */
-@media (max-width: 600px) {
+/* 8) Responsive */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: relative;
+    top: auto;
+    margin-bottom: 2rem;
+  }
   .hero {
     flex-direction: column;
     text-align: center;
@@ -107,4 +136,3 @@ main a:hover {
     margin: 0 auto;
   }
 }
-
