@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home – Hongbin (Elijah) Huang</title>
+  <title>Home – Elijah Huang</title>
 
   <!-- Google Fonts -->
   <link
@@ -23,35 +23,52 @@
     <a href="research.html">Research</a>
   </nav>
 
-  <!-- Hero header with profile photo -->
-  <header class="hero">
-    <img
-      src="assets/portrait.jpg"
-      alt="Hongbin (Elijah) Huang"
-      class="profile-photo"
-    >
-    <div class="hero-text">
-      <h1>Hi, I’m Elijah Huang</h1>
-      <p>Master’s student in Economics at Duke University. Welcome to my corner of the web!</p>
-    </div>
-  </header>
+  <!-- Page layout: sidebar + main content -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Company:</strong> Duke University</li>
+        <li><strong>Email:</strong> <a href="mailto:elijah.huang@example.com">elijah.huang@example.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/elijah-huang" target="_blank">/in/elijah-huang</a></li>
+        <li><strong>Office:</strong> Sanford School of Public Policy, Duke</li>
+      </ul>
+    </aside>
 
-  <!-- Main content -->
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I’m currently pursuing my MA in Economics at Duke University, with research interests in Industrial Organization and Behavioral Game Theory. Here you can find my CV and an overview of my research projects.
-      </p>
-    </section>
+    <!-- Main content area -->
+    <main class="content">
+      <!-- Hero header with profile photo -->
+      <header class="hero">
+        <img
+          src="assets/photo.jpg"
+          alt="Elijah Huang"
+          class="profile-photo"
+        >
+        <div class="hero-text">
+          <h1>Hi, I’m Elijah Huang</h1>
+          <p>Master’s student in Economics at Duke University. Welcome to my corner of the web!</p>
+        </div>
+      </header>
 
-    <section>
-      <h2>Get in Touch</h2>
-      <p>
-        Feel free to <a href="mailto:elijah.h.huang@gmail.com">email me</a> or connect on <a href="https://www.linkedin.com/in/elijah-huang" target="_blank">LinkedIn</a>.
-      </p>
-    </section>
-  </main>
+      <!-- About section -->
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I’m currently pursuing my MA in Economics at Duke University, with research interests in Industrial Organization and Behavioral Game Theory. Here you can find my CV and an overview of my research projects.
+        </p>
+      </section>
+
+      <!-- Get in touch -->
+      <section>
+        <h2>Get in Touch</h2>
+        <p>
+          Feel free to drop me a line or connect on LinkedIn.
+        </p>
+      </section>
+    </main>
+  </div>
 
 </body>
 </html>
+
