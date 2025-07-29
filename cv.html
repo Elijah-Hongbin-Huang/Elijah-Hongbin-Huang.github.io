@@ -1,11 +1,16 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Home – Hongbin (Elijah) Huang</title>
 
-   <!-- add website icon -->
+  <!-- add website icon -->
   <link rel="icon" href="assets/web icon.ico">
+
   
   <!-- Google Fonts -->
   <link
@@ -16,33 +21,12 @@
   <!-- Site stylesheet -->
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
- <!-- 1) placeholder for nav + sidebar -->
-  <div id="site-config"></div>
-  <script>
-    fetch('/assets/config.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('site-config').innerHTML = html;
-      })
-      .catch(console.error);
-  </script>
 
-  <!-- 2) Now wrap sidebar + main in the flex container -->
-  <div class="container">
-    <!-- The fetched <aside> lives inside #site-config, which is here -->
-    <!-- We just need to make sure #site-config is *inside* the container: -->
-    <div id="sidebar-container">
-      <!-- move the fetched sidebar here -->
-      <script>
-        // after loading, move the aside into this wrapper
-        document.addEventListener('DOMContentLoaded', () => {
-          const cfg = document.getElementById('site-config');
-          const aside = cfg.querySelector('aside.sidebar');
-          if (aside) document.getElementById('sidebar-container').appendChild(aside);
-        });
-      </script>
-    </div>
+<body>
+
+<!-- Pull in nav + sidebar from one file -->
+  {% include config.html %}
+
 
     <main class="content">
       <header class="hero">
