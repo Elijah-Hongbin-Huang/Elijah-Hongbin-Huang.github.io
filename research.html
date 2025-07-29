@@ -1,14 +1,30 @@
-
-  <!-- load nav + sidebar from one external file -->
+<body>
+  <!-- 1) placeholder for nav + sidebar -->
   <div id="site-config"></div>
   <script>
     fetch('/assets/config.html')
       .then(r => r.text())
       .then(html => {
         document.getElementById('site-config').innerHTML = html;
-      });
+      })
+      .catch(console.error);
   </script>
 
+  <!-- 2) Now wrap sidebar + main in the flex container -->
+  <div class="container">
+    <!-- The fetched <aside> lives inside #site-config, which is here -->
+    <!-- We just need to make sure #site-config is *inside* the container: -->
+    <div id="sidebar-container">
+      <!-- move the fetched sidebar here -->
+      <script>
+        // after loading, move the aside into this wrapper
+        document.addEventListener('DOMContentLoaded', () => {
+          const cfg = document.getElementById('site-config');
+          const aside = cfg.querySelector('aside.sidebar');
+          if (aside) document.getElementById('sidebar-container').appendChild(aside);
+        });
+      </script>
+    </div>
     <!-- Main content area -->
     <main class="content">
       
