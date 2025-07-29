@@ -1,4 +1,5 @@
-1.The index.html is the home page, other two html are respective pages.
-2.To change to naviagtion bar or the side bar, go the "_includes\config.html"
-3.to convert cv.tex to cv.html, "Assets\use the tex to html.py"
-4.All pdf and photo are stored in Asssets folder
+- `index.html` is the home page; `cv.html` and `research.html` serve as the CV and Research pages.  
+- To modify the navigation bar or sidebar, edit `_includes/config.html`.  
+- To convert `cv.tex` to `cv.html`, run the `tex_to_html.py` script in the `assets` folder.  
+- All PDF and image assets are stored in the `assets` folder.  
+
