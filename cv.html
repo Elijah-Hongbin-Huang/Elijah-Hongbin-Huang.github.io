@@ -14,41 +14,44 @@
   >
 
   <!-- Site stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+ <!-- 1) placeholder for nav + sidebar -->
+  <div id="site-config"></div>
+  <script>
+    fetch('/assets/config.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('site-config').innerHTML = html;
+      })
+      .catch(console.error);
+  </script>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="cv.html">CV</a> |
-    <a href="research.html">Research</a>
-  </nav>
-
-  <!-- Flex container: sidebar on left, main on right -->
+  <!-- 2) Now wrap sidebar + main in the flex container -->
   <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>Contact</h2>
-      <ul>
-        <li><strong>Affiliation:</strong> Duke University</li>
-        <li><strong>Email:</strong>
-          <a href="mailto:hongbin.huang@duke.edu">hongbin.huang@duke.edu</a>
-        </li>
-        <li><strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/hongbin-huang-9b79232ba/" target="_blank">Hongbin (Elijah) Huang</a>
-        </li>
-        <!-- <li><strong>Office:</strong> Sanford School of Public Policy, Duke</li>  -->
-      </ul>
-    </aside>
-
+    <!-- The fetched <aside> lives inside #site-config, which is here -->
+    <!-- We just need to make sure #site-config is *inside* the container: -->
+    <div id="sidebar-container">
+      <!-- move the fetched sidebar here -->
+      <script>
+        // after loading, move the aside into this wrapper
+        document.addEventListener('DOMContentLoaded', () => {
+          const cfg = document.getElementById('site-config');
+          const aside = cfg.querySelector('aside.sidebar');
+          if (aside) document.getElementById('sidebar-container').appendChild(aside);
+        });
+      </script>
+    </div>
 
     <main class="content">
       <header class="hero">
-        <img src="assets/photo.jpg" alt="Hongbin (Elijah) Huang" class="profile-photo">
+        
         <div class="hero-text">
           <h1>Hongbin (Elijah) Huang</h1>
-          <p>Phone: (919)-808-6114 Email: hongbin.huang@duke.edu<br>Personal Website: Elijah-Hongbin-Huang.github.io<br>Last updated: </p>
+          <p> <a href="assets/my_cv.pdf" download="Hongbin_Huang_CV.pdf">
+    📄 Download my CV (PDF)
+  </a></p>
         </div>
       </header>
       
