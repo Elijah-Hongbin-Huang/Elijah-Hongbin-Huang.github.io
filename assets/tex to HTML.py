@@ -63,7 +63,7 @@ layout: none
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home – Hongbin (Elijah) Huang</title>
+  <title>Home – Hongbin Huang</title>
 
   <!-- add website icon -->
   <link rel="icon" href="assets/web icon.ico">
